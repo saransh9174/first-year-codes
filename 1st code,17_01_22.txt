@@ -1,0 +1,43 @@
+#include iostream
+using namespace std;
+
+int main()
+{
+
+    int i, n;
+
+    declaring sum and average as double because average can be a fractional value
+    double sum=0, average=0;
+
+    cout  nnEnter the number of elements you want in an array ;
+    cin  n;
+
+    
+    int arr[n];
+
+    cout  nn Enter   n   integers into an array nn;
+
+    for (i = 0; i  n; i++)
+    {
+        cout   Enter arr [   i   ]  ;
+        cin  arr[i];
+    }
+
+    cout  nn The Elements of the Array are nn;
+
+    for (i = 0; i  n; i++)
+    {
+        cout   arr [   i   ] =   arr[i]  endl;
+        sum += arr[i];
+    }
+
+    average = sumn;
+
+    cout  nn The Sum of the Elements of the Array is    sum  nn;
+
+    cout  nn The Average of the Elements of the Array is    average  nn;
+
+    cout  nn;
+
+    return 0;
+}
