@@ -1,0 +1,89 @@
+#include <iostream>
+  using namespace std;
+
+void linearSearch(int a[], int n) {
+  int temp = -1;
+
+  for (int i = 0; i < 5; i++) {
+    if (a[i] == n) {
+      cout << "Element found at position: " << i + 1 << endl;
+      temp = 0;
+      break;
+    }
+  }
+
+  if (temp == -1) {
+    cout << "No Element Found" << endl;
+  }
+
+}
+
+int binarySearch(int arr[], int left, int right, int x) {
+  while (left <= right) {
+    int mid = left + (right - left) / 2;
+
+    if (arr[mid] == x) {
+      return mid;
+    } else if (arr[mid] < x) {
+      left = mid + 1;
+    } else {
+      right = mid - 1;
+    }
+  }
+
+  return -1;
+}
+
+int main() {
+  int arr[5];
+  int num;
+  int output;
+  int ch;
+  do{
+    cout<<"Enter your choice: "<<endl;
+    cout<<"1) linearSearch"<<endl;
+    cout<<"2)Binary Search"<<endl;
+    cin>>ch;
+  switch(ch){
+    case 1:  
+  cout << "Please enter 5 elements of the Array" << endl;
+  for (int i = 0; i < 5; i++) {
+    cin >> arr[i];
+  }
+  cout << "Please enter an element to search" << endl;
+  int num;
+  cin >> num;
+
+  linearSearch(arr, num);
+
+  return 0;
+
+break;
+
+case 2: cout << "Please enter 10 elements ASCENDING order" << endl;
+  for (int i = 0; i < 10; i++) {
+    cin >> arr[i];
+  }
+  cout << "Please enter an element to search" << endl;
+  cin >> num;
+
+  output = binarySearch(arr, 0, 9, num);
+
+  if (output == -1) {
+    cout << "No Match Found" << endl;
+  } else {
+    cout << "Match found at position: " << output << endl;
+  }
+
+  return 0;
+  
+  case 3: break;
+}
+
+
+
+}
+while(ch!=4);
+
+return 0;
+}
